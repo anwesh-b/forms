@@ -1,7 +1,7 @@
 const MultipleChoiceBuilder = () => {
     return (
         <>
-            Multiple Choice here
+            Multiple Choice Section here
         </>
     )
 }
