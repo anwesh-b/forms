@@ -3,7 +3,7 @@ import axios from 'axios';
 import config from '../config';
 
 /**
- * Http Utility.
+ * Http Utility as axios wrapper.
  */
 const http = axios.create({
     baseURL: config.baseURI,
