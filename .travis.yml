@@ -3,7 +3,7 @@ arch: amd64
 dist: bionic
 language: node_js
 node_js:
-  - 10.24.1
+  - 14.17.5
 branches:
   only:
     - master
@@ -16,9 +16,11 @@ jobs:
     - name: Frontend
       before_script:
         export NODE_OPTIONS=–max_old_space_size=8192
+      before_install:
+        chmod +x .travis/build_condition.sh;
         if .travis/build_condition.sh $TRAVIS_COMMIT_RANGE "frontend";then
         echo "Frontend is being built";
-        cd frontend
+        cd frontend;
         else
         echo -e "\033[0;32mNo Changes\nStoping..." && exit 0;
         fi;
@@ -32,7 +34,7 @@ jobs:
         provider: pages
         skip_cleanup: true
         github_token: $GITHUB_TOKEN
-        local_dir: build
+        local_dir: frontend/build
         keep_history: true
         on:
           branch: 
