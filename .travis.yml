@@ -16,9 +16,10 @@ jobs:
     - name: Frontend
       before_script:
         export NODE_OPTIONS=–max_old_space_size=8192
+      before_install:
         if .travis/build_condition.sh $TRAVIS_COMMIT_RANGE "frontend";then
         echo "Frontend is being built";
-        cd frontend
+        cd frontend;
         else
         echo -e "\033[0;32mNo Changes\nStoping..." && exit 0;
         fi;
