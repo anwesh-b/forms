@@ -1,7 +1,7 @@
 const SelectBuilder = () => {
     return (
         <>
-            Selection Section here
+            Selection here
         </>
     )
 }
