@@ -30,6 +30,8 @@ jobs:
         yarn install;
         yarn test;
         yarn build;
+      before_deploy:
+        cd frontend;
       deploy:
         provider: pages
         skip_cleanup: true
