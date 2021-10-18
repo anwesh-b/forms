@@ -3,7 +3,7 @@ arch: amd64
 dist: bionic
 language: node_js
 node_js:
-  - 10.24.1
+  - 14.17.5
 branches:
   only:
     - master
@@ -30,8 +30,6 @@ jobs:
         yarn install;
         yarn test;
         yarn build;
-      before_deploy:
-        cd frontend;
       deploy:
         provider: pages
         skip_cleanup: true
