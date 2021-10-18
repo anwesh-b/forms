@@ -1,0 +1,39 @@
+---
+arch: amd64
+dist: bionic
+language: node_js
+node_js:
+  - 10.24.1
+branches:
+  only:
+    - master
+    - dev
+git:
+  depth: false
+
+jobs:
+  include:
+    - name: Frontend
+      before_script:
+        export NODE_OPTIONS=–max_old_space_size=8192
+        if .travis/build_condition.sh $TRAVIS_COMMIT_RANGE "frontend";then
+        echo "Frontend is being built";
+        cd frontend
+        else
+        echo -e "\033[0;32mNo Changes\nStoping..." && exit 0;
+        fi;
+        export CI=false;
+      script:
+        echo "Starting";
+        yarn install;
+        yarn test;
+        yarn build;
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: build
+        keep_history: true
+        on:
+          branch: 
+          - master
