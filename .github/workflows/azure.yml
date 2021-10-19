@@ -11,7 +11,7 @@ on:
       - dev
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '/backend/'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '/backend/dist'
   NODE_VERSION: '14.17.5'
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
     - name: 'Resolve Project Dependencies Using yarn'
       shell: bash
       run: |
-        pushd '.${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+        pushd '~/work/forms/forms${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
         yarn install
         yarn build
         popd
