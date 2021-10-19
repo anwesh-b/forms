@@ -3,7 +3,6 @@ export async function fetchAvailabeForms() {
 }
 
 export async function fetchById(formId) {
-
     const surveyQuestions = {
         "id": formId,
         "completedHtml": "<h3>Thank you for your feedback.</h3> <h5>Your thoughts and ideas will help us to create a great product!</h5>",
@@ -65,5 +64,6 @@ export async function fetchById(formId) {
         ],
         "showQuestionNumbers": "off"
     };
+
     return surveyQuestions;
 }
