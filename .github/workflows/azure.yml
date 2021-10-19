@@ -35,8 +35,8 @@ jobs:
         yarn build
         popd
     - name: 'Copy'
-      input:
-        - './dist'
+      run: |
+        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/dist'
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
       id: fa
