@@ -30,9 +30,9 @@ jobs:
     - name: 'Resolve Project Dependencies Using yarn'
       shell: bash
       run: |
-        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+        pushd '.${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
         yarn install
-        yarn build --if-present
+        yarn build
         popd
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
