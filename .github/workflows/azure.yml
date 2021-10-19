@@ -11,7 +11,7 @@ on:
       - dev
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '/backend/dist'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '/backend'
   NODE_VERSION: '14.17.5'
 
 jobs:
