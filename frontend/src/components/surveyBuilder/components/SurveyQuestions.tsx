@@ -7,7 +7,7 @@ const SurveyQuestions = (props: any) => {
     const [questionIndex, setquestionIndex] = useState(0);
 
     const defaultQuestion = {
-        question: 'Is this it',
+        question: '',
         label: '',
         type: 'text',
         data: {},
@@ -37,10 +37,10 @@ const SurveyQuestions = (props: any) => {
 
     return (
         <>
-            <button onClick={handleQuestionAdd} >Add Question</button>
             {questionsState.map((question: Object, index:Number) => {
-                return <Question question={question} key={index} handleQuestionRemove={handleQuestionRemove}/>
+                return <Question question={question} key={index} handleQuestionRemove={handleQuestionRemove} qIndex={index}/>
             })}
+            <button onClick={handleQuestionAdd} >Add Question</button>
         </>
     )
 }

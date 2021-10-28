@@ -21,13 +21,11 @@ const CustomSurvey = () => {
         })();
     }, []);
 
-    useEffect(()=>{
-        console.log(surveyQuestion)
-    },[surveyQuestion])
 
     const complete = (data: any) => {
-        console.log(data);
-        console.log(data.data);
+        return;
+        // console.log(data);
+        // console.log(data.data);
     }
 
     return (
