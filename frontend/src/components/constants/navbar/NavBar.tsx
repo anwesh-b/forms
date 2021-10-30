@@ -1,11 +1,30 @@
 import history from "utils/history";
 import * as routes from 'constants/routes';
 
-const NavBar = () => {
+import { UserContext } from 'components/App';
+
+const NavBar = (props: any) => {
+    return (<UserContext.Consumer>
+        {user => {
+            return <NavBarComponent user={user} {...props} />
+        }}
+    </UserContext.Consumer>)
+}
+
+const NavBarComponent = (props: any) => {
+    const { user, toggleUserType } = props;
+
     return (
-        <div>
-            <span onClick={() => history.push(routes.BUILDER)}>Builder</span>
-            <span onClick={() => history.push(routes.HOME)}>Forms</span>
+        <div className="navbar">
+            <div className="navbar__core">
+                <span className="navbar__core--item" onClick={() => history.push(routes.HOME)}>Forms</span>
+                {user.isHighLevelUser && (
+                    <span className="navbar__core--item" onClick={() => history.push(routes.BUILDER)}>Builder</span>
+                )}
+            </div>
+            <div className="navbar__utils" onClick={toggleUserType}>
+                {user.isHighLevelUser ? <>Switch to Low Level User</> : <>Switch to High Level User</>}
+            </div>
         </div>
     );
 }

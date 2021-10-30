@@ -1,0 +1,61 @@
+.form-builder{
+    @include e(header){
+        text-align: center;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    @include e(question){
+        display: flex;
+        margin: 15px 0;
+        padding: 15px 0 0 0;
+
+        @include m(core){
+            width: 80%;
+            border-bottom: #222222 solid 1px;
+            
+        }
+
+        &:last-child{
+            margin-bottom: 0;
+
+            @include m(core){
+                border-bottom: none;
+            }
+        }
+
+        @include m(delete){
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            height: 20px;
+            cursor: pointer;
+            color: #fff;
+            background-color: #d91e18;
+            transition: box-shadow 500ms;
+
+            &:hover{
+                background-color: #c0392b;
+                box-shadow: 0px 8px 8px rgba(204, 197, 197, 0.25);
+                transition-duration: 2x;
+            }
+        }
+
+        @include m(submit){
+            padding: 10px 15px;
+            color: #fff;
+            background-color: #007c0a;
+            width: 80px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+
+            &:hover{
+                background-color: #006400;
+                box-shadow: 0px 8px 8px rgba(204, 197, 197, 0.25);
+            }
+
+        }
+    }
+}

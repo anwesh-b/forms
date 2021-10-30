@@ -1,0 +1,13 @@
+.input-text{
+    width: 50%;
+    height: 25px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    &:focus-visible{
+        border: initial;
+    }
+    @include m(full-width){
+        width: 90%;
+    }
+}

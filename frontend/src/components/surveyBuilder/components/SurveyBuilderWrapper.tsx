@@ -16,23 +16,25 @@ const SurveyBuilderWrapper = (props: any) => {
     }
 
     return (<>
-        <div>
-            Survey Title
-            <input type="text" name="title" placeholder="Title" defaultValue={initialValues.title} onChange={(e) => onValueChange('title', e.target.value)} />
+        <div className="ok">
+            Title<br/>
+            <input className="input-text" type="text" name="title" placeholder="Enter your title here" defaultValue={initialValues.title} onChange={(e) => onValueChange('title', e.target.value)} />
         </div>
         <div>
-            Start Date
-            <input type="date" name="startDate" placeholder="Start Date" defaultValue={initialValues.startDate} onChange={(e) => onValueChange('startDate', e.target.value)} />
+            Start Date<br/>
+            <input type="date" name="startDate" placeholder={initialValues.startDate} defaultValue={initialValues.startDate} onChange={(e) => onValueChange('startDate', e.target.value)} />
         </div>
         <div>
-            End Date
-            <input type="date" name="endDate" placeholder="End Date" defaultValue={initialValues.endDate} onChange={(e) => onValueChange('endDate', e.target.value)} />
+            End Date<br/>
+            <input type="date" name="endDate" placeholder={initialValues.endDate} defaultValue={initialValues.endDate} onChange={(e) => onValueChange('endDate', e.target.value)} />
         </div>
         <SurveyQuestions questions={initialValues.questions} onQuestionChange={onQuestionChange} />
         <br/>
         <br/>
         <br/>
-        <button type="submit" disabled={isSubmitting} onClick={props.handleSubmit}>Submit</button>
+        <button className="form-builder__question--submit" type="submit" disabled={isSubmitting} onClick={props.handleSubmit}>Submit</button>
+
+        {/* <button type="submit" disabled={isSubmitting} onClick={props.handleSubmit}>Submit</button> */}
     </>)
 }
 
