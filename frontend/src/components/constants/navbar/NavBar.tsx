@@ -2,7 +2,6 @@ import history from "utils/history";
 import * as routes from 'constants/routes';
 
 import { UserContext } from 'components/App';
-import { useContext, useEffect, useState } from "react";
 
 const NavBar = (props: any) => {
     return (<UserContext.Consumer>
@@ -10,7 +9,6 @@ const NavBar = (props: any) => {
             return <NavBarComponent user={user} {...props} />
         }}
     </UserContext.Consumer>)
-
 }
 
 const NavBarComponent = (props: any) => {

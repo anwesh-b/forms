@@ -4,7 +4,6 @@ import './App.css';
 import Router from './Router';
 
 import NavBar from './constants/navbar'
-import { type } from 'os';
 
 export const UserContext = React.createContext<IUser>({ isHighLevelUser: false });
 
